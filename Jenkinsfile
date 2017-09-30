@@ -15,6 +15,9 @@ node
         }
 
     stage 'Tests'
-        sh 'make test'
+        dir('build')
+        {
+            sh 'make test'
+        }
 }
 
