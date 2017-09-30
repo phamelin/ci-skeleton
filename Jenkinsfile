@@ -19,5 +19,15 @@ node
         {
             sh 'make test'
         }
+
+    stage 'ASan'
+        dir('build')
+        {
+            sh '''
+                cmake -DSANITIZE_ADDRESS=ON ..
+                make
+                make test
+            '''
+        }
 }
 
